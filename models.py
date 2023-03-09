@@ -64,3 +64,13 @@ class Post(Base):
         return f"{self.id}: {self.title} {self.create_time}"
 
     __repr__ = __str__
+
+
+class Option(Base):
+    __tablename__ = "options"
+    id: Mapped[int] = mapped_column(primary_key=True, autoincrement=True)
+    create_time: Mapped[Optional[datetime.datetime]]
+    update_time: Mapped[Optional[datetime.datetime]]
+    type: Mapped[int] = mapped_column(default=0)
+    option_key: Mapped[str] = mapped_column(String(100), nullable=False)
+    option_value: Mapped[str] = mapped_column(Text, nullable=False)
