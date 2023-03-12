@@ -35,3 +35,4 @@ if __name__ == '__main__':
     blog_url_body = '\r\n'.join([f"http://windcf.com/archives/{blog_id}" for blog_id in ids])
 
     response = requests.post('http://data.zz.baidu.com/urls?site=windcf.com&token=X95hGKj0yvEILNyl', data=blog_url_body)
+    print(response.text)
